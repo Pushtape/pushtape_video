@@ -6,6 +6,7 @@ php = 5.2.4
 version = 7.x-1.0-alpha5
 project = pushtape_video
 dependencies[] = addthis
+dependencies[] = addthis_displays
 dependencies[] = ctools
 dependencies[] = entity_view_mode
 dependencies[] = eva

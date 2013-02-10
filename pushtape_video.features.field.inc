@@ -35,11 +35,14 @@ function pushtape_video_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'addthis',
-          'settings' => array(),
-          'type' => 'addthis_disabled',
-          'weight' => 2,
+          'label' => 'hidden',
+          'module' => 'addthis_displays',
+          'settings' => array(
+            'button_size' => 'small',
+            'extra_css' => '',
+          ),
+          'type' => 'addthis_basic_button',
+          'weight' => '1',
         ),
         'featured' => array(
           'label' => 'above',
@@ -116,10 +119,9 @@ function pushtape_video_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 1,
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'featured' => array(
           'label' => 'above',
@@ -198,12 +200,9 @@ function pushtape_video_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'mediafront',
-          'settings' => array(
-            'preset' => 'video_playlist',
-          ),
-          'type' => 'mediafront_player',
-          'weight' => '0',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'featured' => array(
           'label' => 'hidden',
@@ -227,7 +226,7 @@ function pushtape_video_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'description_field' => 0,
-        'file_directory' => '',
+        'file_directory' => 'video',
         'file_extensions' => 'mov m4v mpeg avi ogg oga ogv wmv',
         'max_filesize' => '',
         'mediafront' => array(
@@ -244,6 +243,7 @@ function pushtape_video_field_default_fields() {
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
+            'oembed' => 'oembed',
             'private' => 'private',
             'public' => 'public',
             'soundcloud' => 0,

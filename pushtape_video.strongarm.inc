@@ -16,45 +16,19 @@ function pushtape_video_strongarm() {
   $strongarm->name = 'field_bundle_settings_file__video';
   $strongarm->value = array(
     'view_modes' => array(
-      'media_gallery_thumbnail' => array(
-        'custom_settings' => TRUE,
-      ),
-      'media_gallery_lightbox' => array(
-        'custom_settings' => TRUE,
-      ),
-      'media_gallery_detail' => array(
-        'custom_settings' => TRUE,
-      ),
-      'media_gallery_block_thumbnail' => array(
-        'custom_settings' => TRUE,
-      ),
-      'media_gallery_collection_thumbnail' => array(
-        'custom_settings' => TRUE,
+      'album_player' => array(
+        'custom_settings' => FALSE,
       ),
       'track_player' => array(
         'custom_settings' => FALSE,
       ),
-      'album_player' => array(
-        'custom_settings' => FALSE,
-      ),
-      'media_gallery_featured' => array(
+      'featured' => array(
         'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(
-        'file' => array(
-          'media_gallery_thumbnail' => array(
-            'weight' => '0',
-            'visible' => TRUE,
-          ),
-          'media_gallery_featured' => array(
-            'weight' => '0',
-            'visible' => TRUE,
-          ),
-        ),
-      ),
+      'display' => array(),
     ),
   );
   $export['field_bundle_settings_file__video'] = $strongarm;
@@ -121,8 +95,8 @@ function pushtape_video_strongarm() {
         ),
         'pushtape_video_entity_view_1' => array(
           'default' => array(
-            'weight' => '5',
-            'visible' => FALSE,
+            'weight' => '0',
+            'visible' => TRUE,
           ),
           'teaser' => array(
             'weight' => '3',
@@ -141,7 +115,7 @@ function pushtape_video_strongarm() {
         ),
         'pushtape_video_entity_view_2' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '4',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -155,7 +129,7 @@ function pushtape_video_strongarm() {
         ),
         'pushtape_video_entity_view_4' => array(
           'default' => array(
-            'weight' => '1',
+            'weight' => '3',
             'visible' => FALSE,
           ),
           'teaser' => array(

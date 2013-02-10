@@ -13,7 +13,7 @@ function pushtape_video_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'pushtape_video';
   $page->task = 'page';
-  $page->admin_title = 'Pushtape Video';
+  $page->admin_title = 'Video';
   $page->admin_description = '';
   $page->path = 'video';
   $page->access = array(
@@ -60,7 +60,7 @@ function pushtape_video_default_page_manager_pages() {
     'title' => 'Video',
     'no_blocks' => 1,
     'pipeline' => 'ipe',
-    'css_id' => 'video-panel',
+    'css_id' => 'video',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
@@ -114,9 +114,7 @@ function pushtape_video_default_page_manager_pages() {
       'header_type' => 'none',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
+    $pane->style = array();
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;

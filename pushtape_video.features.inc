@@ -52,8 +52,6 @@ function pushtape_video_mediafront_default_presets() {
       ),
       'settings' => array(
         'debug' => 0,
-        'disptime' => 0,
-        'duration' => 0,
         'volume' => '80',
         'wmode' => 'transparent',
         'preload' => TRUE,
@@ -71,7 +69,7 @@ function pushtape_video_mediafront_default_presets() {
         'shuffle' => 0,
         'loop' => 0,
         'logo' => '',
-        'swfplayer' => '/profiles/pushtape/modules/contrib/mediafront/players/osmplayer/player/minplayer/flash/minplayer.swf',
+        'swfplayer' => '/sites/pushtape-panels.dev.openlearninglabs.org/modules/contrib/mediafront/players/osmplayer/player/minplayer/flash/minplayer.swf',
         'link' => '',
         'width' => '100%',
         'height' => '450px',
@@ -88,7 +86,7 @@ function pushtape_video_mediafront_default_presets() {
         'showController' => 1,
         'prereel' => '',
         'postreel' => '',
-        'player_settings__active_tab' => 'edit-player-settings-control-settings',
+        'player_settings__active_tab' => 'edit-player-settings-presentation',
       ),
     ),
   );
@@ -103,7 +101,7 @@ function pushtape_video_mediafront_views_default_options() {
     'pushtape_video' => array(
       'field_video' => array(
         'link_to_player' => 0,
-        'field_type' => 'media',
+        'field_type' => '0',
         'media_type' => 'media',
         'preview' => '0',
         'thumbnail' => '0',
@@ -111,7 +109,7 @@ function pushtape_video_mediafront_views_default_options() {
       ),
       'title' => array(
         'link_to_player' => 0,
-        'field_type' => 'title',
+        'field_type' => '0',
         'media_type' => 'media',
         'preview' => '0',
         'thumbnail' => '0',
@@ -135,7 +133,7 @@ function pushtape_video_mediafront_views_default_options() {
       ),
       'filename' => array(
         'link_to_player' => 0,
-        'field_type' => 'title',
+        'field_type' => '0',
         'media_type' => 'media',
         'preview' => '0',
         'thumbnail' => '0',
