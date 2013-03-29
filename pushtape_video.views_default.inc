@@ -12,8 +12,8 @@ function pushtape_video_views_default_views() {
 
   $view = new view();
   $view->name = 'video';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'A view of all published videos.';
+  $view->tag = 'pushtape';
   $view->base_table = 'node';
   $view->human_name = 'Video';
   $view->core = 7;
@@ -32,6 +32,14 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No videos yet';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No videos yet. Create a <a href="?q=node/add/video">video!</a>';
+  $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
   /* Relationship: Content: Video (field_video:fid) */
   $handler->display->display_options['relationships']['field_video_fid']['id'] = 'field_video_fid';
   $handler->display->display_options['relationships']['field_video_fid']['table'] = 'field_data_field_video';
@@ -88,6 +96,11 @@ function pushtape_video_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'video';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Video';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['video'] = $view;
 
   return $export;
