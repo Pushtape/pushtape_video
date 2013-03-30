@@ -31,5 +31,6 @@ features[variable][] = menu_parent_video
 features[variable][] = node_options_video
 features[variable][] = node_preview_video
 features[variable][] = node_submitted_video
+features[variable][] = panelizer_defaults_node_video
 features[views_view][] = video
 features_exclude[dependencies][page_manager] = page_manager
