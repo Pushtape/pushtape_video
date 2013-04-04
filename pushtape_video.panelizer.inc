@@ -45,30 +45,12 @@ function pushtape_video_panelizer_defaults() {
     $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'center';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_video';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'video-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'media_colorbox',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'file_view_mode' => 'colorbox',
-        'colorbox_view_mode' => 'default',
-        'fixed_width' => '',
-        'fixed_height' => '',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'title',
-        'audio_playlist' => 0,
-      ),
-      'context' => 'panelizer',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'view_mode' => NULL,
+      'view_mode' => 'teaser',
       'widget_title' => NULL,
       'items_per_page' => NULL,
       'exposed' => array(
@@ -81,6 +63,8 @@ function pushtape_video_panelizer_defaults() {
       'link_to_view' => NULL,
       'more_link' => NULL,
       'path' => NULL,
+      'view_settings' => 'fields',
+      'header_type' => 'none',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -93,7 +77,7 @@ function pushtape_video_panelizer_defaults() {
     $display->content['new-1'] = $pane;
     $display->panels['center'][0] = 'new-1';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:video:default'] = $panelizer;
 
