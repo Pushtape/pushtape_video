@@ -1,13 +1,24 @@
 <?php
 /**
  * @file
- * pushtape_video.file_default_displays.inc
+ * pushtape_video.features.defaultconfig.inc
  */
 
 /**
- * Implements hook_file_default_displays().
+ * Implements hook_defaultconfig_features().
  */
-function pushtape_video_file_default_displays() {
+function pushtape_video_defaultconfig_features() {
+  return array(
+    'pushtape_video' => array(
+      'file_default_displays' => 'file_default_displays',
+    ),
+  );
+}
+
+/**
+ * Implements hook_defaultconfig_file_default_displays().
+ */
+function pushtape_video_defaultconfig_file_default_displays() {
   $export = array();
 
   $file_display = new stdClass();
