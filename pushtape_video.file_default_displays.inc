@@ -52,6 +52,8 @@ function pushtape_video_file_default_displays() {
   $file_display->status = FALSE;
   $file_display->settings = array(
     'image_style' => '',
+    'alt' => '[file:field_file_image_alt_text]',
+    'title' => '[file:field_file_image_title_text]',
   );
   $export['video__colorbox__file_image'] = $file_display;
 
@@ -61,7 +63,7 @@ function pushtape_video_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'photo_thumb',
+    'image_style' => 'panopoly_image_video',
   );
   $export['video__colorbox__media_vimeo_image'] = $file_display;
 
@@ -73,7 +75,14 @@ function pushtape_video_file_default_displays() {
   $file_display->settings = array(
     'width' => '560',
     'height' => '340',
+    'color' => '',
+    'protocol' => 'http://',
     'autoplay' => 0,
+    'loop' => 0,
+    'title' => 1,
+    'byline' => 1,
+    'portrait' => 1,
+    'api' => 0,
   );
   $export['video__colorbox__media_vimeo_video'] = $file_display;
 
@@ -83,7 +92,7 @@ function pushtape_video_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'photo_thumb',
+    'image_style' => 'panopoly_image_video',
   );
   $export['video__colorbox__media_youtube_image'] = $file_display;
 
@@ -93,18 +102,21 @@ function pushtape_video_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'version' => '3',
-    'theme' => 'dark',
     'width' => '560',
     'height' => '340',
-    'fullscreen' => 1,
+    'theme' => 'dark',
+    'color' => 'red',
+    'autohide' => '2',
     'autoplay' => 0,
-    'related' => 1,
-    'hd' => 0,
-    'showsearch' => 1,
-    'modestbranding' => 0,
+    'loop' => 0,
     'showinfo' => 1,
-    'chromeless' => 0,
+    'modestbranding' => 0,
+    'rel' => 1,
+    'nocookie' => 0,
+    'protocol_specify' => 0,
+    'protocol' => 'https:',
+    'enablejsapi' => 0,
+    'origin' => '',
   );
   $export['video__colorbox__media_youtube_video'] = $file_display;
 
