@@ -61,6 +61,7 @@ function pushtape_video_views_default_views() {
   );
   $handler->display->display_options['fields']['field_video']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_video']['separator'] = '';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -90,28 +91,6 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Video */
-  $handler->display->display_options['fields']['field_video']['id'] = 'field_video';
-  $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
-  $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
-  $handler->display->display_options['fields']['field_video']['label'] = '';
-  $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_video']['type'] = 'media_colorbox';
-  $handler->display->display_options['fields']['field_video']['settings'] = array(
-    'file_view_mode' => 'colorbox',
-    'colorbox_view_mode' => 'default',
-    'fixed_width' => '',
-    'fixed_height' => '',
-    'colorbox_gallery' => 'page',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'mediafield',
-    'audio_playlist' => 0,
-  );
-  $handler->display->display_options['fields']['field_video']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_video']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_video']['separator'] = '';
   $handler->display->display_options['path'] = 'video';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Video';
@@ -140,27 +119,6 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Videos flagged as featured will appear here.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Video */
-  $handler->display->display_options['fields']['field_video']['id'] = 'field_video';
-  $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
-  $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
-  $handler->display->display_options['fields']['field_video']['label'] = '';
-  $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_video']['type'] = 'media_colorbox';
-  $handler->display->display_options['fields']['field_video']['settings'] = array(
-    'file_view_mode' => 'colorbox',
-    'colorbox_view_mode' => 'default',
-    'fixed_width' => '',
-    'fixed_height' => '',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'title',
-    'audio_playlist' => 0,
-  );
-  $handler->display->display_options['fields']['field_video']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_video']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
