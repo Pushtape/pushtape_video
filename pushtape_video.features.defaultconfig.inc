@@ -72,7 +72,7 @@ function pushtape_video_defaultconfig_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'photo_thumb',
+    'image_style' => 'panopoly_image_video',
   );
   $export['video__colorbox__media_vimeo_image'] = $file_display;
 
@@ -94,7 +94,7 @@ function pushtape_video_defaultconfig_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'photo_thumb',
+    'image_style' => 'panopoly_image_video',
   );
   $export['video__colorbox__media_youtube_image'] = $file_display;
 

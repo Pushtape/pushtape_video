@@ -73,25 +73,5 @@ function pushtape_video_file_default_displays() {
   );
   $export['video__colorbox__media_youtube_video'] = $file_display;
 
-  $file_display = new stdClass();
-  $file_display->api_version = 1;
-  $file_display->name = 'video__video_thumbnails__media_vimeo_image';
-  $file_display->weight = 0;
-  $file_display->status = TRUE;
-  $file_display->settings = array(
-    'image_style' => 'panopoly_image_video',
-  );
-  $export['video__video_thumbnails__media_vimeo_image'] = $file_display;
-
-  $file_display = new stdClass();
-  $file_display->api_version = 1;
-  $file_display->name = 'video__video_thumbnails__media_youtube_image';
-  $file_display->weight = 0;
-  $file_display->status = TRUE;
-  $file_display->settings = array(
-    'image_style' => 'panopoly_image_video',
-  );
-  $export['video__video_thumbnails__media_youtube_image'] = $file_display;
-
   return $export;
 }
