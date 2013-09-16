@@ -67,6 +67,13 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
+  /* Sort criterion: Content: Feature content (field_featured_status) */
+  $handler->display->display_options['sorts']['field_featured_status_value']['id'] = 'field_featured_status_value';
+  $handler->display->display_options['sorts']['field_featured_status_value']['table'] = 'field_data_field_featured_status';
+  $handler->display->display_options['sorts']['field_featured_status_value']['field'] = 'field_featured_status_value';
+  $handler->display->display_options['sorts']['field_featured_status_value']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_featured_status_value']['expose']['label'] = 'Feature content (field_featured_status)';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -84,6 +91,7 @@ function pushtape_video_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grid';
@@ -91,12 +99,12 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['path'] = 'video';
-  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['path'] = 'video-old';
   $handler->display->display_options['menu']['title'] = 'Video';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Featured Video */
   $handler = $view->new_display('panel_pane', 'Featured Video', 'panel_pane_1');
@@ -145,6 +153,15 @@ function pushtape_video_views_default_views() {
   );
   $handler->display->display_options['pane_category']['name'] = 'Video';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 'fields_override';
 
   /* Display: Node Override (colorbox) */
   $handler = $view->new_display('panel_pane', 'Node Override (colorbox)', 'panel_pane_2');
@@ -172,6 +189,48 @@ function pushtape_video_views_default_views() {
       'label' => 'Content: Nid',
     ),
   );
+
+  /* Display: Video grid */
+  $handler = $view->new_display('panel_pane', 'Video grid', 'panel_pane_3');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_video']['id'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
+  $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['label'] = '';
+  $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_video']['type'] = 'media_colorbox';
+  $handler->display->display_options['fields']['field_video']['settings'] = array(
+    'file_view_mode' => 'colorbox',
+    'colorbox_view_mode' => 'default',
+    'fixed_width' => '',
+    'fixed_height' => '',
+    'colorbox_gallery' => 'page',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'mediafield',
+    'audio_playlist' => 0,
+  );
+  $handler->display->display_options['fields']['field_video']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_video']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_video']['separator'] = '';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Video';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 'offset';
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $export['video'] = $view;
 
   return $export;

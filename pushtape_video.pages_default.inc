@@ -37,11 +37,11 @@ function pushtape_video_default_page_manager_pages() {
   $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Landing page',
-    'no_blocks' => FALSE,
+    'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
-    'css_id' => '',
+    'css_id' => 'video',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
@@ -49,45 +49,62 @@ function pushtape_video_default_page_manager_pages() {
   $display = new panels_display();
   $display->layout = 'boxton';
   $display->layout_settings = array();
-  $display->panel_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
   $display->cache = array();
-  $display->title = 'Video';
+  $display->title = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'video-panel_pane_4';
+    $pane->subtype = 'video-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'teaser',
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
+      'items_per_page' => '10',
+      'offset' => '0',
+      'fields_override' => array(
+        'field_video' => 1,
+        'title' => 1,
+      ),
       'exposed' => array(
+        'widget_title' => 'Video',
+        'more_link' => 0,
+        'use_pager' => 0,
+        'pager_id' => '',
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
+      'override_title' => '',
+      'override_title_text' => '',
+      'view_mode' => 'teaser',
+      'widget_title' => 'Video',
       'use_pager' => NULL,
       'pager_id' => NULL,
-      'offset' => NULL,
       'link_to_view' => NULL,
-      'more_link' => NULL,
+      'more_link' => 0,
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
     );
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
     $display->panels['contentmain'][0] = 'new-1';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['video'] = $page;

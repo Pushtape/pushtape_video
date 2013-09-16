@@ -28,14 +28,7 @@ function pushtape_video_file_default_displays() {
   $file_display->settings = array(
     'width' => '560',
     'height' => '340',
-    'color' => '',
-    'protocol' => 'http://',
     'autoplay' => 0,
-    'loop' => 0,
-    'title' => 1,
-    'byline' => 1,
-    'portrait' => 1,
-    'api' => 0,
   );
   $export['video__colorbox__media_vimeo_video'] = $file_display;
 
@@ -55,21 +48,18 @@ function pushtape_video_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
+    'version' => '3',
+    'theme' => 'dark',
     'width' => '560',
     'height' => '340',
-    'theme' => 'dark',
-    'color' => 'red',
-    'autohide' => '2',
+    'fullscreen' => 1,
     'autoplay' => 0,
-    'loop' => 0,
-    'showinfo' => 1,
+    'related' => 1,
+    'hd' => 0,
+    'showsearch' => 1,
     'modestbranding' => 0,
-    'rel' => 1,
-    'nocookie' => 0,
-    'protocol_specify' => 0,
-    'protocol' => 'https:',
-    'enablejsapi' => 0,
-    'origin' => '',
+    'showinfo' => 1,
+    'chromeless' => 0,
   );
   $export['video__colorbox__media_youtube_video'] = $file_display;
 
