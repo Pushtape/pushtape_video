@@ -71,10 +71,10 @@ function pushtape_video_default_page_manager_pages() {
       'offset' => '0',
       'fields_override' => array(
         'field_video' => 1,
-        'title' => 1,
+        'title' => 0,
       ),
       'exposed' => array(
-        'widget_title' => 'Video',
+        'widget_title' => '',
         'more_link' => 0,
         'use_pager' => 0,
         'pager_id' => '',
@@ -84,7 +84,7 @@ function pushtape_video_default_page_manager_pages() {
       'override_title' => '',
       'override_title_text' => '',
       'view_mode' => 'teaser',
-      'widget_title' => 'Video',
+      'widget_title' => '',
       'use_pager' => NULL,
       'pager_id' => NULL,
       'link_to_view' => NULL,
@@ -103,7 +103,7 @@ function pushtape_video_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-1'] = $pane;
     $display->panels['contentmain'][0] = 'new-1';
-  $display->hide_title = PANELS_TITLE_PANE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

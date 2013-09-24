@@ -18,9 +18,9 @@ function pushtape_video_panelizer_defaults() {
   $panelizer->panelizer_type = 'node';
   $panelizer->panelizer_key = 'video';
   $panelizer->no_blocks = FALSE;
-  $panelizer->css_id = '';
+  $panelizer->css_id = 'video';
   $panelizer->css = '';
-  $panelizer->pipeline = 'standard';
+  $panelizer->pipeline = 'ipe';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();
