@@ -93,8 +93,8 @@ function pushtape_video_views_default_views() {
     'video' => 'video',
   );
 
-  /* Display: Video grid */
-  $handler = $view->new_display('panel_pane', 'Video grid', 'panel_pane_3');
+  /* Display: Video grid (all videos) */
+  $handler = $view->new_display('panel_pane', 'Video grid (all videos)', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Video */
@@ -125,7 +125,7 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Video';
-  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['pane_category']['weight'] = '5';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 'offset';
@@ -136,8 +136,139 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
 
-  /* Display: Node Override (colorbox) */
-  $handler = $view->new_display('panel_pane', 'Node Override (colorbox)', 'panel_pane_2');
+  /* Display: Video grid (by videoset) */
+  $handler = $view->new_display('panel_pane', 'Video grid (by videoset)', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '1';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'group widgets';
+  $handler->display->display_options['style_options']['column_classes'] = 'col span_1_of_4';
+  $handler->display->display_options['style_options']['first_column_classes'] = '';
+  $handler->display->display_options['style_options']['last_column_classes'] = '';
+  $handler->display->display_options['style_options']['default_classes'] = 1;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No videos yet';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No videos yet. Create a <a href="?q=node/add/video">video!</a>';
+  $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_video_1']['id'] = 'field_video_1';
+  $handler->display->display_options['fields']['field_video_1']['table'] = 'field_data_field_video';
+  $handler->display->display_options['fields']['field_video_1']['field'] = 'field_video';
+  $handler->display->display_options['fields']['field_video_1']['label'] = 'Thumb';
+  $handler->display->display_options['fields']['field_video_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_video_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_video_1']['type'] = 'media_colorbox';
+  $handler->display->display_options['fields']['field_video_1']['settings'] = array(
+    'file_view_mode' => 'colorbox',
+    'colorbox_view_mode' => 'default',
+    'fixed_width' => '',
+    'fixed_height' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'mediafield',
+    'audio_playlist' => 0,
+  );
+  $handler->display->display_options['fields']['field_video_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_video_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_video_1']['separator'] = '';
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_video']['id'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
+  $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['label'] = 'Original';
+  $handler->display->display_options['fields']['field_video']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_video']['type'] = 'media_colorbox';
+  $handler->display->display_options['fields']['field_video']['settings'] = array(
+    'file_view_mode' => 'colorbox',
+    'colorbox_view_mode' => 'default',
+    'fixed_width' => '',
+    'fixed_height' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'mediafield',
+    'audio_playlist' => 0,
+  );
+  $handler->display->display_options['fields']['field_video']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_video']['separator'] = '';
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_video_1';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '[field_video]';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'video' => 'video',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Video';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Video grid (per videoset) */
+  $handler = $view->new_display('panel_pane', 'Video grid (per videoset)', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -150,7 +281,7 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['pane_category']['name'] = 'Video';
+  $handler->display->display_options['pane_category']['name'] = '';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
@@ -167,11 +298,11 @@ function pushtape_video_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Featured Video', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Video';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'responsive_grid';
@@ -237,7 +368,7 @@ function pushtape_video_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['pane_category']['name'] = 'Video';
-  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['pane_category']['weight'] = '9';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -247,6 +378,148 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
+
+  /* Display: Featured Videoset */
+  $handler = $view->new_display('panel_pane', 'Featured Videoset', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '1';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'group widgets';
+  $handler->display->display_options['style_options']['column_classes'] = 'col span_1_of_1';
+  $handler->display->display_options['style_options']['first_column_classes'] = '';
+  $handler->display->display_options['style_options']['last_column_classes'] = '';
+  $handler->display->display_options['style_options']['default_classes'] = 1;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No videos yet';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No videos yet. Create a <a href="?q=node/add/video">video!</a>';
+  $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_video_1']['id'] = 'field_video_1';
+  $handler->display->display_options['fields']['field_video_1']['table'] = 'field_data_field_video';
+  $handler->display->display_options['fields']['field_video_1']['field'] = 'field_video';
+  $handler->display->display_options['fields']['field_video_1']['label'] = 'Thumb';
+  $handler->display->display_options['fields']['field_video_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_video_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_video_1']['type'] = 'media_colorbox';
+  $handler->display->display_options['fields']['field_video_1']['settings'] = array(
+    'file_view_mode' => 'colorbox',
+    'colorbox_view_mode' => 'default',
+    'fixed_width' => '',
+    'fixed_height' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'mediafield',
+    'audio_playlist' => 0,
+  );
+  $handler->display->display_options['fields']['field_video_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_video_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_video_1']['separator'] = '';
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_video']['id'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
+  $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['label'] = 'Original';
+  $handler->display->display_options['fields']['field_video']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_video']['type'] = 'media_colorbox';
+  $handler->display->display_options['fields']['field_video']['settings'] = array(
+    'file_view_mode' => 'colorbox',
+    'colorbox_view_mode' => 'default',
+    'fixed_width' => '',
+    'fixed_height' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'mediafield',
+    'audio_playlist' => 0,
+  );
+  $handler->display->display_options['fields']['field_video']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_video']['separator'] = '';
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_video_1';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '[field_video]';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 1;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'video' => 'video',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Feature content (field_featured_status) */
+  $handler->display->display_options['filters']['field_featured_status_value']['id'] = 'field_featured_status_value';
+  $handler->display->display_options['filters']['field_featured_status_value']['table'] = 'field_data_field_featured_status';
+  $handler->display->display_options['filters']['field_featured_status_value']['field'] = 'field_featured_status_value';
+  $handler->display->display_options['filters']['field_featured_status_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_featured_status_value']['group'] = 1;
+  $handler->display->display_options['pane_category']['name'] = 'Video';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['video'] = $view;
 
   return $export;
