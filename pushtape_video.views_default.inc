@@ -405,9 +405,9 @@ function pushtape_video_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['label'] = 'No videos yet';
+  $handler->display->display_options['empty']['area']['label'] = 'No Videos featured yet';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No videos yet. Create a <a href="?q=node/add/video">video!</a>';
+  $handler->display->display_options['empty']['area']['content'] = 'Videos flagged as featured will appear here.';
   $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
