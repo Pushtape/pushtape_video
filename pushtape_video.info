@@ -17,7 +17,6 @@ dependencies[] = media_youtube
 dependencies[] = page_manager
 dependencies[] = panelizer
 dependencies[] = panopoly_pages
-dependencies[] = pushtape_photos
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_content
