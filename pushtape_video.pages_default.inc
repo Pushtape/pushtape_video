@@ -57,10 +57,11 @@ function pushtape_video_default_page_manager_pages() {
   );
   $display->cache = array();
   $display->title = '';
+  $display->uuid = '518aa1ed-fe7c-4942-a796-ca1278946109';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-dade1577-fd5b-40fa-a629-7c799433c3c8';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'video-panel_pane_3';
@@ -101,10 +102,11 @@ function pushtape_video_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1';
+    $pane->uuid = 'dade1577-fd5b-40fa-a629-7c799433c3c8';
+    $display->content['new-dade1577-fd5b-40fa-a629-7c799433c3c8'] = $pane;
+    $display->panels['contentmain'][0] = 'new-dade1577-fd5b-40fa-a629-7c799433c3c8';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
+  $display->title_pane = 'new-dade1577-fd5b-40fa-a629-7c799433c3c8';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['video'] = $page;

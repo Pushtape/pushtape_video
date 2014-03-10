@@ -41,10 +41,11 @@ function pushtape_video_panelizer_defaults() {
   );
   $display->cache = array();
   $display->title = '%node:title';
+  $display->uuid = '5c4f9711-1753-4764-b396-957ec95e1fa9';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-389e941d-2ff7-4e8a-b083-cbe0540f05d8';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'video-panel_pane_2';
@@ -75,8 +76,9 @@ function pushtape_video_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1';
+    $pane->uuid = '389e941d-2ff7-4e8a-b083-cbe0540f05d8';
+    $display->content['new-389e941d-2ff7-4e8a-b083-cbe0540f05d8'] = $pane;
+    $display->panels['contentmain'][0] = 'new-389e941d-2ff7-4e8a-b083-cbe0540f05d8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;

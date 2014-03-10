@@ -40,7 +40,7 @@ function pushtape_video_node_info() {
     'video' => array(
       'name' => t('Video'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('A simple videoset for sharing a group of videos.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
