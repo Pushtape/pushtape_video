@@ -68,11 +68,11 @@ function pushtape_video_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '10',
+      'items_per_page' => '12',
       'offset' => '0',
       'fields_override' => array(
         'field_video' => 1,
-        'title' => 0,
+        'filename' => 0,
       ),
       'exposed' => array(
         'widget_title' => 'All Videos',

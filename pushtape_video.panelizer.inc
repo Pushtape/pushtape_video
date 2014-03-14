@@ -53,20 +53,26 @@ function pushtape_video_panelizer_defaults() {
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'teaser',
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
+      'widget_title' => '',
+      'items_per_page' => '12',
       'exposed' => array(
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
+      'use_pager' => 0,
+      'pager_id' => '',
+      'offset' => '0',
       'link_to_view' => NULL,
       'more_link' => NULL,
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
+      'fields_override' => array(
+        'field_video' => 1,
+        'filename' => 0,
+      ),
+      'override_title' => '',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
