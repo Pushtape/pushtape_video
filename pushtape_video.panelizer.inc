@@ -18,9 +18,9 @@ function pushtape_video_panelizer_defaults() {
   $panelizer->panelizer_type = 'node';
   $panelizer->panelizer_key = 'video';
   $panelizer->no_blocks = FALSE;
-  $panelizer->css_id = '';
+  $panelizer->css_id = 'video';
   $panelizer->css = '';
-  $panelizer->pipeline = 'standard';
+  $panelizer->pipeline = 'ipe';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();
@@ -30,41 +30,49 @@ function pushtape_video_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'flexible';
+  $display->layout = 'bowie';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
   $display->title = '%node:title';
+  $display->uuid = '5c4f9711-1753-4764-b396-957ec95e1fa9';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
-    $pane->panel = 'center';
+    $pane->pid = 'new-389e941d-2ff7-4e8a-b083-cbe0540f05d8';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'video-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'teaser',
-      'widget_title' => NULL,
-      'items_per_page' => NULL,
+      'widget_title' => '',
+      'items_per_page' => '12',
       'exposed' => array(
         'sort_by' => NULL,
         'sort_order' => NULL,
       ),
-      'use_pager' => NULL,
-      'pager_id' => NULL,
-      'offset' => NULL,
+      'use_pager' => 0,
+      'pager_id' => '',
+      'offset' => '0',
       'link_to_view' => NULL,
       'more_link' => NULL,
       'path' => NULL,
       'view_settings' => 'fields',
       'header_type' => 'none',
+      'fields_override' => array(
+        'field_video' => 1,
+        'filename' => 0,
+      ),
+      'override_title' => '',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -74,8 +82,9 @@ function pushtape_video_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['center'][0] = 'new-1';
+    $pane->uuid = '389e941d-2ff7-4e8a-b083-cbe0540f05d8';
+    $display->content['new-389e941d-2ff7-4e8a-b083-cbe0540f05d8'] = $pane;
+    $display->panels['contentmain'][0] = 'new-389e941d-2ff7-4e8a-b083-cbe0540f05d8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
